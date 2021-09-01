@@ -1,0 +1,12 @@
+name: kcinFurnacePatch
+version: '${project.version}'
+main: me.kcin.furnacepatch.FurnacePatch
+api-version: 1.16
+authors: [ kcin ]
+description: Dupe exploit patch
+website: https://altummc.net/
+
+permissions:
+  FurnacePatch.bypass:
+    default: op
+    description: bypass perm
