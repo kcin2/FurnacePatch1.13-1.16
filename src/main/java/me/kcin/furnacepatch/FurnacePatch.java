@@ -1,6 +1,7 @@
 package me.kcin.furnacepatch;
 
 import com.destroystokyo.paper.event.player.PlayerRecipeBookClickEvent;
+import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -12,7 +13,7 @@ public final class FurnacePatch extends JavaPlugin implements Listener {
 
     private String bypassPermission = null;
     private boolean doMessages = false;
-    private String cancelMessage = "";
+    private String cancelMessage = null;
 
     @Override
     public void onEnable() {
@@ -39,7 +40,7 @@ public final class FurnacePatch extends JavaPlugin implements Listener {
                     event.setCancelled(true);
                 }
                 if (doMessages) {
-                    player.sendMessage(cancelMessage);
+                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', cancelMessage));
                 }
             }
         }
