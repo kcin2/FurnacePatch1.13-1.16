@@ -36,9 +36,10 @@ public final class FurnacePatch extends JavaPlugin implements Listener {
         InventoryView inv = player.getOpenInventory();
         if (inv.getType() == InventoryType.FURNACE) {
             if (inv.getTopInventory().getItem(0) != null) {
-                if (!player.hasPermission(bypassPermission)) {
-                    event.setCancelled(true);
+                if (player.hasPermission(bypassPermission)) {
+                    return;
                 }
+                event.setCancelled(true);
                 if (doMessages) {
                     player.sendMessage(ChatColor.translateAlternateColorCodes('&', cancelMessage));
                 }
