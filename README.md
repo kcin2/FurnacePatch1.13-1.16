@@ -7,7 +7,9 @@ Config.yml
 messageOnCancel:
 #enable the message
   enabled: true
+  
 #message sent
   message: '&cThis Recipe Book feature is temporarily disabled.'
+  
 #set bypass permission
   bypassPermission: furnacepatch.bypass
