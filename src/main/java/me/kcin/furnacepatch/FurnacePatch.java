@@ -34,7 +34,7 @@ public final class FurnacePatch extends JavaPlugin implements Listener {
     public void onRecipeClick(PlayerRecipeBookClickEvent event) {
         Player player = event.getPlayer();
         InventoryView inv = player.getOpenInventory();
-        if (inv.getType() == InventoryType.FURNACE) {
+        if (inv.getType() == InventoryType.FURNACE || inv.getType() == InventoryType.BLAST_FURNACE || inv.getType() == InventoryType.SMOKER) {
             if (inv.getTopInventory().getItem(0) != null) {
                 if (player.hasPermission(bypassPermission)) {
                     return;
